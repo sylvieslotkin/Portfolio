@@ -1,0 +1,19 @@
+h1 { color: hotpink;
+}
+body {
+    width: 50%;
+    margin: auto;
+}
+img {
+    width: 35%;
+}
+p#intro{ font-size: larger;}
+/*for phones */
+@media (orientation: portrait) {
+    body {
+        width: 100%;
+    }
+}
+#byline {
+    font-family: cursive;
+}
