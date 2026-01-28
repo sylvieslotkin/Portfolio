@@ -1,26 +1,53 @@
-
+<html>
 <head>
-    <link href="style.css" type="text/css" rel="stylesheet" />
-
+  <title>Restaurant Filter</title>
+  <style>
+    html, body { margin:0; padding:20px; height:100%; }
+    button { padding:10px 20px; margin:5px; font-size:18px; }
+    .coffee { background:#f4a261; color:#000; }
+    .lunch  { background:#2a9d8f; color:#fff; }
+    .desert { background:#e76f51; color:#fff; }
+    
+    .item {
+      padding:15px; margin:10px 0;
+      font-size:20px; border-radius:5px;
+    }
+    .coffee.item { background:#f4a261; }
+    .lunch.item  { background:#2a9d8f; }
+    .desert.item { background:#e76f51; }
+    
+    .item.hidden { display:none; }
+  </style>
 </head>
+<body>
+  <button onclick="filter('all')">All</button>
+  <button onclick="filter('coffee')">Coffee</button>
+  <button onclick="filter('lunch')">Lunch</button>
+  <button onclick="filter('desert')">Desert</button>
 
-<h1>RuPaul's Drag Race Season 18 Slays the Screen</h1>
+  <div class="item coffee">Starbucks</div>
+  <div class="item coffee">Ignite Coffee</div>
+  <div class="item coffee">Eureka Cafe</div>
+  
+  <div class="item lunch">Naf Naf Grill</div>
+  <div class="item lunch">Veggie Grill</div>
+  <div class="item lunch">Potbelly</div>
+  
+  <div class="item desert">Dairy Queen</div>
+  <div class="item desert">Andy’s Frozen Custard</div>
+  <div class="item desert">Nana’s Ice Cream</div>
 
-<div id="byline">
- By <a href= "https://www.linkedin.com/in/sylvie-slotkin-061004206/" > Sylvie Slotkin </a>
-    </div>
-
-
-
-<p id="intro"> January 2, 2026, RuPaul's Drag Race season 18 premiered. 14 new queens entered the werk room, all competing to become America's next drag superstar. 
-</p>
-
-<p>Cardi B judged the first episode, and no queens went home, although Kenya Pleaser and Mandy Mango were in the bottom. The queens were challenged to create sickening looks out of past competitors' scraps. Kenya was surprised to have done so poorly since she is a competent seamstress.
-</p>
-<img src="Screenshot 2026-01-12 at 2.49.55 PM.png" alt="image of Kenya Pleaser, a contestant from season 18"/> 
-
-<p>The second episode aired on Friday. In this episode, the queens split in three teams and performed “QPop” girl group numbers. They wrote original lyrics to three different tracks, a disco number, a punk rock number, and an 80s pop number. Dove Cameron judged this episode. 
-</p>
-
-<p>The third episode airs this Friday and the thirteen remaining queens will compete in what is sure to be a hilarious and fabulous challenge. 
-</p>
+  <script>
+    function filter(cat) {
+      let items = document.querySelectorAll('.item');
+      items.forEach(item => {
+        if (cat === 'all' || item.classList.contains(cat)) {
+          item.classList.remove('hidden');
+        } else {
+          item.classList.add('hidden');
+        }
+      });
+    }
+  </script>
+</body>
+</html>
