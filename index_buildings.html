@@ -1,0 +1,52 @@
+<html>
+<head>
+  <title>Northwestern Buildings</title>
+  <style>
+    html, body { margin:0; padding:20px; height:100%; }
+    button { padding:10px 20px; margin:5px; font-size:18px; }
+    .Medill { background:#ff92e0; color:#000; }
+    .McCormick  { background:#212f87; color:#fff; }
+    .Weinberg { background:#ffcc9f; color:#fff; }
+    
+    .item {
+      padding:15px; margin:10px 0;
+      font-size:20px; border-radius:5px;
+    }
+    .Medill.item { background:#ff92e0; }
+    .McCormick.item  { background:#212f87; }
+    .Weinberg.item { background:#ffcc9f; }
+    
+    .item.hidden { display:none; }
+  </style>
+</head>
+<body>
+  <button onclick="filter('All')">All</button>
+  <button onclick="filter('Medill')">Medill</button>
+  <button onclick="filter('McCormick')">McCormick</button>
+  <button onclick="filter('Weinberg')">Weinberg</button>
+
+  <div class="item Medill">MFC</div>
+  <div class="item Medill">Fisk</div>
+  
+  <div class="item McCormick">Tech</div>
+  <div class="item McCormick">Ford</div>
+  <div class="item McCormick">Searle</div>
+  
+  <div class="item Weinberg">Kresge</div>
+  <div class="item Weinberg">Harris</div>
+  <div class="item Weinberg">Locy</div>
+
+  <script>
+    function filter(cat) {
+      let items = document.querySelectorAll('.item');
+      items.forEach(item => {
+        if (cat === 'All' || item.classList.contains(cat)) {
+          item.classList.remove('hidden');
+        } else {
+          item.classList.add('hidden');
+        }
+      });
+    }
+  </script>
+</body>
+</html>
