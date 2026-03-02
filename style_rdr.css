@@ -1,0 +1,11 @@
+/*for phones */
+@media (orientation: portrait) {
+    body {
+        width: 30%;
+    }
+}
+
+body {
+    width: 75%;
+    margin: auto;
+}
