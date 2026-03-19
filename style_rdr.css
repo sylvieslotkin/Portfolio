@@ -1,11 +1,18 @@
 /*for phones */
 @media (orientation: portrait) {
     body {
-        width: 30%;
+        width: 100%;
+        background-color: lightpink;
     }
 }
 
 body {
-    width: 75%;
+    width: 66%;
+    margin: auto;
+    background-color: lightpink;
+
+}
+img {
+    width: 25%;
     margin: auto;
 }
